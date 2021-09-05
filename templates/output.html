@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MDR-TB Classification</title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            html{
+    overflow: hidden;
+}
+        body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            align-content: center;
+        }
+
+        #login-form-container {
+
+border: 1px solid #ad3636;
+padding: 50px 50px;
+margin-left: 30%;
+margin-right: 30%;
+text-align: center;
+border-top: 10px solid #ad3636;
+background-color: #f8f4e5;
+align-content: center;
+}
+
+.field{
+
+    margin-top:2em;
+    display: block;
+    width: 100%;
+    font-size: 12pt;
+    line-height: 12pt * 2; 
+    font-family: Helvetica, sans-serif, Arial;
+}
+.is-size-4{
+    text-align: center;
+    font-size: 3em;
+    color: cornflowerblue;
+}
+
+.control{
+    font-size: 1.5em; 
+    color: cornflowerblue;
+}
+button{
+  display: block;
+
+  line-height: 12pt* 2;
+  padding: 0 20px;
+  border: none;
+  background: cornflowerblue;
+  color: white;
+  letter-spacing: 2px;
+  transition: .2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+  size:2em;
+
+}
+button:hover{
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+}
+        </style>
+
+
+
+    </head>	
+    <body>
+        <div id="login-form-container">
+            <div class="card" style="width: 400px">
+                <div class="card-content">
+                    <div class="media">
+                        <div class="is-size-4">{{ variety }}</div>
+                    </div>
+                    <form action="home">
+                        <div class="field">
+                            <button class="button is-fullwidth is-rounded is-success">Make Another classification</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

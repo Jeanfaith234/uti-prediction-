@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MDR-TB Classification values </title>
+        <link rel="stylesheet" href="style.css">
+
+        <style>
+            html{
+    overflow: hidden;
+}
+        body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            align-content: center;
+        }
+
+#login-form-container {
+
+border: 1px solid #ad3636;
+padding: 50px 50px;
+margin-left: 30%;
+margin-right: 30%;
+text-align: center;
+border-top: 10px solid #ad3636;
+background-color: #f8f4e5;
+align-content: center;
+}
+
+
+
+#contenttable {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 2em;
+  margin-left: 1em;
+
+  margin-right: 2em;
+  table-layout:fixed;
+}
+
+#contenttable td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  overflow: hidden; 
+    text-overflow: ellipsis; 
+    word-wrap: break-word;
+  
+}
+
+#contenttable tr:nth-child(even){background-color: #f2f2f2;}
+
+#contenttable tr:hover {background-color: #ddd;}
+
+#contenttable th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ad3636;
+  color: white;
+}
+        </style>
+
+
+
+    </head>	
+    <body>
+
+
+
+
+                        <table id ="contenttable">
+                            <tr><th>Age</th><th>Sex</th><th>Marital Status</th><th>Poverty Level</th><th>Prison History</th><th>Completed Secondary</th><th>Tobacco Use</th><th>Alcohol Use</th><th>Drug Use</th><th>Rehab</th><th>Body Mass Index</th><th>Chronic Disease</th><th>Hiv Status</th><th>Diabetes</th><th>Treatment</th><th>label</th></tr>
+                            {% for i in range(labels| length) %}
+                            <tr><td>{{ labels[i]["age"] }}</td><td>{{ labels[i]["sex"] }}</td><td>{{ labels[i]["marital_status"] }}</td><td>{{ labels[i]["poverty_level"] }}</td><td>{{ labels[i]["prison_history"] }}</td><td>{{ labels[i]["completed_secondary"] }}</td><td>{{ labels[i]["tobacco_use"] }}</td><td>{{ labels[i]["alcohol_use"] }}</td><td>{{ labels[i]["drug_use"] }}</td><td>{{ labels[i]["rehab"] }}</td><td>{{ labels[i]["body_mass_index"] }}</td><td>{{ labels[i]["chronic_disease"] }}</td><td>{{ labels[i]["hiv_status"] }}</td><td>{{ labels[i]["diabetes"] }}</td><td>{{ labels[i]["treatment"] }}</td><td>{{ labels[i]["label"] }}</td></tr>
+                            {% endfor %}
+                         </table>
+                        
+
+
+    </body>
+</html>

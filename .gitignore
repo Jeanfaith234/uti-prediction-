@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+#remove env file 
+.env
+#remove files 
+*.csv
+*.xls
+

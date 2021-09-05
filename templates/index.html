@@ -1,0 +1,244 @@
+<!DOCTYPE html> 
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MDR-TB Classification</title>
+
+    <style>
+
+
+        body{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #login-form-container {
+
+border: 1px solid #ad3636;
+padding: 50px 100px;
+margin-left: 20%;
+margin-right: 20%;
+text-align: left;
+border-top: 10px solid #ad3636;
+background-color: #f8f4e5;
+}
+
+.field{
+
+    margin-top:2em;
+    display: block;
+    width: 100%;
+    font-size: 12pt;
+    line-height: 12pt * 2; 
+    font-family: Helvetica, sans-serif, Arial;
+}
+.is-size-4{
+    text-align: center;
+    font-size: 3em;
+    color: cornflowerblue;
+}
+#rad{margin-bottom: 12pt * 2;}
+.control{
+    font-size: 1.5em; 
+    color: cornflowerblue;
+}
+button{
+  display: block;
+  float: center;
+  line-height: 12pt* 2;
+  padding: 0 20px;
+  border: none;
+  background: cornflowerblue;
+  color: white;
+  letter-spacing: 2px;
+  transition: .2s all ease-in-out;
+  border-bottom: 2px solid transparent;
+  outline: none;
+  font-size: 1.2em;
+  border-radius: 8px;
+  size:2em;
+
+}
+button:hover{
+    background: rgba(0,0,0,1);
+    color: white;
+    border: 1px solid rgba(0,0,0,1);
+}
+    </style>
+</head>	
+<body>
+    <div id="login-form-container">
+        <form action="classify" method="POST">
+            <div class="card" style="width: 400px">
+            <div class="card-content">
+                <div class="media">
+                <div class="is-size-4">MDR-TB Classification</div>
+                </div>
+                <div class="content">
+
+                <div class="field" style="margin-top:2em;">
+                    <p class="control">
+                    Age: 
+                </p>
+
+                        <input name="age" type="radio"  required value="21 and younger" id ="rad">21 and younger</input>
+                        <input name="age" type="radio" required value="22 to 26" id ="rad">22 to 26</input>
+                        <input name="age" type="radio" required value="27 to 37" id ="rad">27 to 37</input>
+                        <input name="age" type="radio" required value="38 and older " id ="rad">38 and older</input>
+
+                   
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                    Sex: 
+                </p>
+
+                        <input value="Male"name="sex" type ="radio" required>Male</input>
+                        <input value="Female"name="sex" type ="radio" required>Female</input>
+
+                   
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                    Marital status: 
+                </p>
+                        <input required value="Single" name="marital_status" type="radio" >Single</input>
+                        <input required value="Married/cohabitating" name="marital_status" type="radio" >Married/cohabitating</input>
+                        <input required value="Divorced/separated" name="marital_status" type="radio">Divorced/separated</input>
+                        <input required value="Widowed"name="marital_status" type="radio">Widowed</input>
+
+                   
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Poverty Level:
+                    </p>
+                            <input required value="Not in poverty" name="poverty_level" type="radio">Not in poverty</input>
+                            <input required value="Poverty/extreme poverty" name="poverty_level" type="radio">Poverty/extreme poverty</input>
+                    
+                </div>
+                <div class="field">
+                    <p class="control">
+                        Prison History:
+                    </p> 
+                            <input required value="No" name="prison_history" type="radio">No</input>
+                            <input required value="Yes" name="prison_history" type="radio">Yes</input>
+                   
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Completed Secondary Education: 
+                    </p>
+                            <input required value="No" name="completed_secondary" type="radio">No</input>
+                            <input required value="Yes"name="completed_secondary" type="radio">Yes</input>
+                   
+                </div>
+                <div class="field">
+                    <p class="control">
+                        History of Tobacco Use:
+                    </p>
+                            <input required value="Used to smoke" name="tobacco_use" type="radio">Used to smoke</input>
+                            <input required value="Never smoked" name="tobacco_use" type="radio">Never smoked</input>
+                            <input required value="Currently smokes" name="tobacco_use" type="radio">Currently smokes</input>
+                    
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Alcohol Use at Least Once Per Week: 
+                    </p>
+                            <input required value="No" name="alcohol_use" type="radio">No</input>
+                            <input required value="Yes" name="alcohol_use" type="radio">Yes</input>
+                    
+                </div>  
+
+                <div class="field">
+                    <p class="control">
+                        History of Drug Use: 
+                    </p>
+                            <input value="No" name="drug_use" type="radio">No</input>
+                            <input value="Yes" name="drug_use" type="radio">Yes</input>
+
+                   
+                </div>
+                <div class="field">
+                    <p class="control">
+                        History of Rehab: 
+                    </p>
+                            <input required value="No" name="rehab" type="radio">No</input>
+                            <input required value="Yes" name="rehab" type="radio">Yes</input>
+                   
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Body Mass Index: 
+                    </p>
+                            <input required value="Underweight" name="body_mass_index" type="radio">Underweight</input>
+                            <input required value="Normal" name="body_mass_index" type="radio">Normal</input>
+                            <input required value="Overweight/Obese" name="body_mass_index" type="radio">Overweight/Obese</input>
+
+
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        History of Chronic Disease:
+                    </p>
+                            <input required value="No" name="chronic_disease" type="radio">No</input>
+                            <input required value="Yes" name="chronic_disease" type="radio">Yes</input>
+                   
+                </div>
+                <div class="field">
+                    <p class="control">
+                        HIV Status: 
+                    </p>
+                            <input required value="Negative" name="hiv_status" type="radio">Negative</input>
+                            <input required value="Test not done" name="hiv_status" type="radio">Test not done</input>
+                            <input required value="Positive" name="hiv_status" type="radio">Positive</input>
+                   
+                </div>
+                <div class="field">
+                    <p class="control">
+                        History Diabetes Melitus: 
+                    </p>
+                            <input required value="No" name="diabetes" type="radio">No</input>
+                            <input required value="Yes" name="diabetes" type="radio">Yes</input>
+                    
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        Treatment Outcome: 
+                    </p>
+                            <input required value="Cured" name="treatment" type="radio">Cured</input>
+                            <input required value="Transferred out" name="treatment" type="radio">Transferred out</input>
+                            <input required value="Died" name="treatment" type="radio">Died</input>
+                            <input required value="Default" name="treatment" type="radio">Default</input>
+                            <input required value="Still in treatment" name="treatment" type="radio">Still in treatment</input>
+                            <input required value="Discharged" name="treatment" type="radio">Discharged</input>
+                            <input required value="Absconded" name="treatment" type="radio">Absconded</input>
+                            <input required value="Loss On Follow Up" name="treatment" type="radio">Loss On Follow Up</input>
+                    </p>
+                </div>
+
+
+                                                                           
+                
+                <div class="field">
+                    <button class="button is-fullwidth is-rounded is-success">Submit</button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
